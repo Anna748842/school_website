@@ -2,10 +2,13 @@
   "name": "school-website-server",
   "version": "1.0.0",
   "private": true,
+  "homepage": "https://Anna748842.github.io/school_website/",
   "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "cors": "^2.8.6",
