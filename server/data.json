@@ -1,0 +1,53 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "Karam Festival Celebration",
+      "date": "10 Sep 2026",
+      "category": "Events",
+      "description": "Students participated in cultural performances at the Karam Festival celebration."
+    },
+    {
+      "id": 2,
+      "title": "Matric Examination Achievers Felicitated",
+      "date": "20 Mar 2026",
+      "category": "Achievement",
+      "description": "Students who performed exceptionally well in the 2025 Matric examination were felicitated."
+    },
+    {
+      "id": 3,
+      "title": "2024 Batch Silver Jubilee Reunion",
+      "date": "15 Apr 2026",
+      "category": "Alumni",
+      "description": "Former students of the 2001 batch returned to the school for a Silver Jubilee reunion."
+    },
+    {
+      "id": 4,
+      "title": "Independence Day Celebration",
+      "date": "15 Aug 2026",
+      "category": "Event",
+      "description": "School celebrates Independence Day with patriotic fervor and cultural programs."
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "date": "10 Oct 2026",
+      "title": "Sports Day",
+      "location": "School Playground"
+    },
+    {
+      "id": 2,
+      "date": "18 Nov 2026",
+      "title": "Annual Function",
+      "location": "School Auditorium"
+    },
+    {
+      "id": 3,
+      "date": "25 Dec 2026",
+      "title": "Winter Break",
+      "location": "School Campus"
+    }
+  ]
+}
+

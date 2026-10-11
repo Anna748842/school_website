@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-cursive: "Dancing Script", cursive;
+  
+  --color-ink: #172033;
+  --color-muted: #667085;
+  --color-brand: #163b65;
+  --color-brand-soft: #edf4fb;
+  --color-accent: #d79b42;
+  --color-surface: #f8fafc;
+}
+
+@layer utilities {
+  .bg-navy-gradient {
+    background: linear-gradient(135deg, #0f2b4a 0%, #163b65 100%);
+  }
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #163b65;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f2b4a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #ffffff;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  color: #ffffff;
+  background: var(--color-brand);
+}
