@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Trash2, Plus, LogOut } from 'lucide-react';
+import { apiUrl } from '../api';
 
 export default function AdminDashboard() {
   const [news, setNews] = useState([]);
@@ -23,7 +24,7 @@ export default function AdminDashboard() {
 
   const fetchNews = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/news');
+      const response = await fetch(apiUrl('/api/news'));
       const data = await response.json();
       setNews(data);
     } catch (err) {
@@ -37,7 +38,7 @@ export default function AdminDashboard() {
     e.preventDefault();
     const token = localStorage.getItem('adminToken');
     try {
-      const response = await fetch('http://localhost:5000/api/news', {
+      const response = await fetch(apiUrl('/api/news'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -62,7 +63,7 @@ export default function AdminDashboard() {
     if (!window.confirm('Are you sure you want to delete this?')) return;
     const token = localStorage.getItem('adminToken');
     try {
-      const response = await fetch(`http://localhost:5000/api/news/${id}`, {
+      const response = await fetch(apiUrl(`/api/news/${id}`), {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -170,4 +171,3 @@ export default function AdminDashboard() {
     </div>
   );
 }
-

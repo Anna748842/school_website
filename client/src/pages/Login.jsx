@@ -19,6 +19,7 @@ import {
   Globe,
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { apiUrl } from "../api";
 
 const BrandMark = () => (
   <Link to="/" className="flex items-center gap-2">
@@ -102,7 +103,7 @@ export default function Login() {
     if (activeRole === "admin") {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:5000/api/login", {
+        const response = await fetch(apiUrl("/api/login"), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ username, password }),

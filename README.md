@@ -61,3 +61,21 @@ npm run dev
 Open `http://localhost:5173`. The public News & Events page reads from the API,
 the admin can manage news and events after signing in, and the Contact form
 saves messages to MySQL.
+
+## Deploy the website to GitHub Pages
+
+The `Deploy website to GitHub Pages` workflow builds the frontend and deploys it
+to `https://anna748842.github.io/school_website/` whenever a commit is pushed to
+`main`. In the GitHub repository, open **Settings → Pages** and set the build
+and deployment source to **GitHub Actions**.
+
+GitHub Pages hosts the static frontend only; it does not run the Express API or
+MySQL database. To enable News & Events data, admin login, and contact form
+submissions online, deploy the API and database separately. Add a repository
+Actions variable named `VITE_API_URL` with the public API origin (for example,
+`https://api.example.com`, without a trailing slash), and configure the API's
+`CLIENT_ORIGIN` to `https://anna748842.github.io`. Keep database credentials,
+`ADMIN_PASSWORD`, and `JWT_SECRET` in the API host's private environment
+settings, not in GitHub Pages variables or committed files. Without an API
+deployment, the static website can still be browsed, but API-backed features
+will not be available.

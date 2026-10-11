@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, Clock, Send, ArrowRight, GraduationCap, Building, ShieldCheck, Trophy } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
+import { apiUrl } from '../api';
 
 export default function Contact() {
   const [submitting, setSubmitting] = useState(false);
@@ -28,7 +29,7 @@ export default function Contact() {
     setSubmitError(false);
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(apiUrl('/api/contact'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

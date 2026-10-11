@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, Clock, MapPin, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/PageHero';
+import { apiUrl } from '../api';
 
 export default function NewsEvents() {
   const [activeTab, setActiveTab] = useState('Latest News');
@@ -12,7 +13,7 @@ export default function NewsEvents() {
   const [upcomingEvents, setUpcomingEvents] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/news')
+    fetch(apiUrl('/api/news'))
       .then(res => res.json())
       .then(data => {
         const newsFormatted = data.map(n => ({
@@ -23,7 +24,7 @@ export default function NewsEvents() {
         setNewsItems(newsFormatted);
       });
 
-    fetch('http://localhost:5000/api/events')
+    fetch(apiUrl('/api/events'))
       .then(res => res.json())
       .then(data => {
         const eventsFormatted = data.map(ev => {
